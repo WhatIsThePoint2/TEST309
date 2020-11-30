@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow: hidden;
+}
+nav {
+  display: flex;
+  width: 100%;
+}
+ul {
+  font-family: "Josefin Sans", sans-serif;
+  box-shadow: 0px 8px 21px 10px rgba(0, 0, 0, 0.37);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+li a:hover {
+  opacity: 0.3;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+nav .FloatR {
+  float: right;
+}
+li {
+  float: left;
+}
+.lead {
+  margin-top: 5%;
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 90%;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+/* Section Images */
+section#home {
+  background: url(https://wallpapercave.com/wp/wp7338046.jpg) no-repeat center
+    center/cover;
+}
+
+section#about {
+  background: url(https://wallpapercave.com/wp/wp7856567.jpg) no-repeat center
+    center/cover;
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: space-evenly;
+}
+section#Projects {
+  background: url(https://wallpapercave.com/wp/wp6045534.jpg) no-repeat center
+    center/cover;
+  justify-content: space-evenly;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+section#service {
+  background: url(https://wallpapercave.com/wp/wp6554458.jpg) no-repeat center
+    center/cover;
+  justify-content: space-evenly;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+section#contact {
+  background: url(https://wallpapercave.com/wp/wp7382454.jpg) no-repeat center
+    center/cover;
+  justify-content: space-evenly;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.avatar {
+  margin-top: 30%;
+  flex-direction: column;
+}
+.text {
+  margin-left: 5%;
+}
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: 50%;
+}
+
+.flip-card-back {
+  background-color: rgba(0, 0, 0, 0);
+  transform: rotateY(180deg);
+  border-radius: 50%;
+}
+.flip-card:hover {
+  cursor: pointer;
+}
+
+#slideshow {
+  overflow: hidden;
+  height: 410px;
+  width: 650px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 410px;
+  width: 650px;
+}
+.slide h3 {
+  padding-left: 10px;
+}
+.slide:nth-child(1) {
+  background: url(../res/award.png) no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+  background: url(../res/award.png) no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+  background: url(../res/award.png) no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+  background: url(../res/justtry.png) no-repeat center center/cover;
+}
+
+.slide-number {
+  color: #000;
+  text-align: center;
+  font-size: 10em;
+}
+
+@-webkit-keyframes slide {
+  20% {
+    margin-left: 0px;
+  }
+  30% {
+    margin-left: -650px;
+  }
+  50% {
+    margin-left: -650px;
+  }
+  60% {
+    margin-left: -1300px;
+  }
+  70% {
+    margin-left: -1300px;
+  }
+  80% {
+    margin-left: -1950px;
+  }
+  90% {
+    margin-left: -1950px;
+  }
+}
+
+#mssg {
+  display: none;
+}
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+#mssg h2 {
+  text-decoration: blink;
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+}
+#mssg span {
+  cursor: pointer;
+  text-decoration: underline;
+}
